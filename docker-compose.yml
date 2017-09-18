@@ -1,0 +1,35 @@
+//File could be renamed to docker-compose-test.yml as it just runs the test
+
+//TODO: integrate nodemon
+
+version: '3'
+services:
+
+  micro:
+    build: .
+    image: micro
+    command: bash -c "sleep 5; ./node_modules/lab/bin/lab -c -m 3500 --verbose"
+    environment:
+      HOSTNAME: "localhost"
+      HOST: 0.0.0.0
+      PORT: 8000
+      NODE_ENV: test
+      MONGODB_URI: "mongodb://db:27017/test"
+      ORIGIN: "*"
+    expose:
+      - 8000
+    networks:
+      - all
+    depends_on:
+      - db
+
+  db:
+    image: mongo:3
+    command: mongod --smallfiles --quiet
+    expose:
+      - "27017"
+    networks:
+      - all
+
+networks:
+  all:
