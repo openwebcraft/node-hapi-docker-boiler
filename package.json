@@ -1,7 +1,7 @@
 {
   "name": "node-hapi-docker-boiler",
   "version": "0.1.0",
-  "description": "",
+  "description": "A nodejs, hapi, docker boilerplate. Made for starting a new microservice with a REST API.",
   "main": "src/index.js",
   "directories": {
     "test": "test"
@@ -23,6 +23,9 @@
     "lab": "^11.0.1",
     "nock": "^9.0.14",
     "pow-mongodb-fixtures": "^0.14.0"
+  },
+  "bugs": {
+    "url": "https://github.com/0xkalle/node-hapi-docker-boiler/issues"
   },
   "scripts": {
     "test": "lab -t 100"
