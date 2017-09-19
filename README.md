@@ -1,6 +1,15 @@
 # node-hapi-docker-boiler
 
+| Warning |
+| --- |
+|This repository is still work in progress.
+
 This is a boilerplate for developing a small hapi server inspired by [openwebcraft/node-js-starter](https://github.com/openwebcraft/nodejs-docker-starter)
+
+## How to set up
+TODO: Explain installation and execution
+TODO: List of changes to create a new MS.
+
 
 ## dependencies
 
