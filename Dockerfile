@@ -9,6 +9,8 @@ RUN npm install pm2@latest -g
 
 # Create app directory
 RUN mkdir -p /usr/src/app
+
+# Make it the working directory
 WORKDIR /usr/src/app
 
 # Install app dependencies
@@ -19,4 +21,5 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app
 
-#CMD [ "pm2-docker", "src/index.js" ]
+# Command to run, if no command is defined in the compose file or if the image is used by itself.
+CMD [ "pm2-docker", "src/index.js" ]

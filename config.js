@@ -1,6 +1,9 @@
 'use strict';
 
-// required environment variables
+/**
+ * Define your required enfironment variable here.
+ * If an env is missing, we will throw an error.
+ */
 [
     'NODE_ENV',
     'HOST',
@@ -12,13 +15,23 @@
     }
 })
 
+
+/**
+ * This is the JSON which will be exported. Use all required envs here.
+ * 
+ * You can also extend your config with static values.
+ */
 const config = {
     env: process.env.NODE_ENV,
     server: {
         host: process.env.HOST,
         port: Number(process.env.PORT),
         origin: process.env.ORIGIN.split(' ')
+    },
+    foo: {
+        bar: "NoEnv"
     }
+
 }
 
 module.exports = config;

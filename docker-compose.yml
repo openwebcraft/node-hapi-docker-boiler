@@ -1,6 +1,6 @@
-//File could be renamed to docker-compose-test.yml as it just runs the test
+#File could be renamed to docker-compose-test.yml as it just runs the test
 
-//TODO: integrate nodemon
+#TODO: integrate nodemon
 
 version: '3'
 services:
