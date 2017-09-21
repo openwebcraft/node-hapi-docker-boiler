@@ -4,7 +4,7 @@
 | --- |
 |This repository is still work in progress.
 
-This is a boilerplate for developing a small hapi server inspired by [openwebcraft/node-js-starter](https://github.com/openwebcraft/nodejs-docker-starter)
+This is a boilerplate for developing a small hapi server (or microservice) inspired by [openwebcraft/node-js-starter](https://github.com/openwebcraft/nodejs-docker-starter)
 
 ## Purpose of this Boilerplate
 
