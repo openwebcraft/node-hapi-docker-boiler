@@ -8,7 +8,8 @@
     'NODE_ENV',
     'HOST',
     'PORT',
-    'ORIGIN'
+    'ORIGIN',
+    'JWTSECRET'
 ].forEach((name) => {
     if (!process.env[name]) {
         throw new Error(`Environment variable ${name} is missing`)
@@ -27,6 +28,9 @@ const config = {
         host: process.env.HOST,
         port: Number(process.env.PORT),
         origin: process.env.ORIGIN.split(' ')
+    },
+    auth: {
+        jwtSecret: process.env.JWTSECRET
     },
     foo: {
         bar: "NoEnv"
