@@ -46,11 +46,11 @@ const joiPostPlanets = Joi.object().keys({
  */
 
 const getPlanetsByName = (request, reply) => { //I name the handlerfunctions by <method><Endpoint>[By<path>]
-
+    reply(Boom.notImplemented());
 }
 
 const postPlanets = (request, reply) => {
-
+    reply(Boom.notImplemented());
 }
 
 /**
