@@ -1,0 +1,32 @@
+version: '3'
+services:
+
+  micro:
+    build: .
+    image: micro
+    command: bash -c "sleep 5; pm2-docker src/index.js"
+    environment:
+      HOSTNAME: "localhost"
+      HOST: 0.0.0.0
+      PORT: 8000
+      NODE_ENV: test
+      MONGODB_URI: "mongodb://db:27017/test"
+      ORIGIN: "*"
+      JWTSECRET: "changethissecret"
+    expose:
+      - 8000
+    networks:
+      - all
+    depends_on:
+      - db
+
+  db:
+    image: mongo:3
+    command: mongod --smallfiles --quiet
+    expose:
+      - "27017"
+    networks:
+      - all
+
+networks:
+  all:
