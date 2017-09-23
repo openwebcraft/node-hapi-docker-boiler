@@ -62,7 +62,7 @@ const postPlanets = (request, reply) => {
 module.exports = [
     {
         method: "GET",
-        path: "/planets/{planetName}",
+        path: "/planets/{name}",
         config: {
             validate: {
                 params: joiGetPlanetsByNameParams
