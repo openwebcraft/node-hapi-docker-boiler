@@ -27,10 +27,10 @@ server.connection({
     routes: {
         cors: {
             origin: config.server.origin
+        },
+        files: {
+            relativeTo: filePath.join(__dirname)
         }
-    },
-    files: {
-        relativeTo: filePath.join(__dirname)
     }
 });
 
@@ -53,6 +53,7 @@ server.register([require('hapi-auth-jwt2')])
          * 
          * See ./controller/planets.js for how to structure a controller
          */
+        console.log("Routes: ", _.flatten(_.map(controllers, (o)=>o)));
         server.route(_.flatten(_.map(controllers, (o)=>o)));
 
 

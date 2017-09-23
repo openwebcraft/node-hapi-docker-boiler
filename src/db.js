@@ -1,7 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
-var config = require('../../config');
+var config = require('../config');
 var Promise = require('bluebird');
 
 //Set bluebird as the promise library for mongoose

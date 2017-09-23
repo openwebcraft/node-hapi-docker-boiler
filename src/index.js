@@ -11,5 +11,5 @@
 
  db.connect()
     .then(()=> server.start())
-    .then(() => console.log("Server running at: ${server.info.uri}"))
+    .then(() => console.log("Server running at: "+server.info.uri))
     .catch((err) => console.log("Error while starting server!", err));
