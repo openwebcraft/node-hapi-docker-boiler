@@ -11,6 +11,8 @@
 const Joi = require('joi');
 const Boom = require('boom');
 
+const Planet = require('../models/Planet');
+
 
 /**
  * Joi Validation Schemas 
@@ -46,11 +48,35 @@ const joiPostPlanets = Joi.object().keys({
  */
 
 const getPlanetsByName = (request, reply) => { //I name the handlerfunctions by <method><Endpoint>[By<path>]
-    reply(Boom.notImplemented());
+    let planetProm = Planet.findByName(request.params.name);
+    planetProm.then((planet) => {
+        if (!planet) throw Boom.notFound('Could not find your Planet.');
+        return planet.toJSON();
+    }).then((planetJSON) => {
+        reply(planetJSON);
+    }).catch((err)=>{
+        /**
+         * Wrapping error in case you did not make it an Boom Error before.
+         * Details: https://github.com/hapijs/boom/blob/master/README.md#wraperror-statuscode-message
+         */
+        reply(Boom.wrap(err));
+    })
 }
 
 const postPlanets = (request, reply) => {
-    reply(Boom.notImplemented());
+    let newPlanet = new Planet(request.payload);
+    newPlanet.save().catch((err)=>{
+        /**
+         * It's a good idea to catch errors where they happens.
+         * That makes it easy to give them meaningfull statuscodes.
+         */
+        if(err && err.code && err.code == 11000) throw Boom.conflict("A Planet with this name already exists.");
+        else throw Boom.wrap(err);
+    }).then((planet)=>{
+        reply(planet.toJSON());
+    }).catch((err)=>{
+        reply(Boom.wrap(err));
+    })
 }
 
 /**
