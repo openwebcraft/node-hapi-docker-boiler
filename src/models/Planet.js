@@ -11,8 +11,8 @@ var schema = new Schema({
     discoveryDate: {type: Date, default: Date.now}
 });
 
-schema.static.findByStargateAddress = function(address){
-    return this.findOne({stargateAddress: address}).exec();
+schema.static.findByName = function(name){
+    return this.findOne({name}).exec();
 }
 
 module.exports = mongoose.model('Planet', schema);
