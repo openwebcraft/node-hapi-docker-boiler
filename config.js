@@ -9,7 +9,8 @@
     'HOST',
     'PORT',
     'ORIGIN',
-    'JWTSECRET'
+    'JWTSECRET',
+    'MONGODB_URI',
 ].forEach((name) => {
     if (!process.env[name]) {
         throw new Error(`Environment variable ${name} is missing`)
@@ -31,6 +32,10 @@ const config = {
     },
     auth: {
         jwtSecret: process.env.JWTSECRET
+    },
+    mongo: {
+        uri: process.env.MONGODB_URI,
+        options: {}
     },
     foo: {
         bar: "NoEnv"

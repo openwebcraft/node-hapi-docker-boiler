@@ -8,17 +8,20 @@ services:
     environment:
       HOSTNAME: "localhost"
       HOST: 0.0.0.0
-      PORT: 8000
-      NODE_ENV: test
-      MONGODB_URI: "mongodb://db:27017/test"
+      PORT: 8080
+      NODE_ENV: development
+      MONGODB_URI: "mongodb://db:27017/local"
       ORIGIN: "*"
       JWTSECRET: "changethissecret"
     expose:
-      - 8000
+      - 8080
     networks:
       - all
     depends_on:
       - db
+    ports:
+      - "8080:8080"
+
 
   db:
     image: mongo:3
