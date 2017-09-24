@@ -14,7 +14,6 @@
     "joi": "^9.0.4",
     "jsonwebtoken": "^7.1.9",
     "lodash": "^4.17.4",
-    "moment": "^2.15.0",
     "mongoose": "^4.6.0",
     "require-all": "^2.0.0"
   },
