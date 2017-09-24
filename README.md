@@ -40,14 +40,14 @@ This is a boilerplate for developing a small hapi server (or microservice) inspi
 ```
 .
 +-- _src
-|   +-- controller  //For all controllers
-|   +-- models      //For all mongoose Models
+|   +-- controllers     //For all controllers
+|   +-- models          //For all mongoose Models
 |   +-- auth.js
 |   +-- db.js
 |   +-- index.js
 |   +-- server.js
 +-- _test
-|   +-- controller
+|   +-- controllers
 |   +-- models
 |   +-- helper
 +-- .dockerignore
