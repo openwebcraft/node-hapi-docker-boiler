@@ -67,7 +67,7 @@ const postPlanets = (request, reply) => {
     let newPlanet = new Planet(request.payload);
     newPlanet.save().catch((err)=>{
         /**
-         * It's a good idea to catch errors where they happens.
+         * It's a good idea to catch errors where they happen.
          * That makes it easy to give them meaningfull statuscodes.
          */
         if(err && err.code && err.code == 11000) throw Boom.conflict("A Planet with this name already exists.");

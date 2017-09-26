@@ -53,13 +53,11 @@ server.register([require('hapi-auth-jwt2')])
          * 
          * See ./controller/planets.js for how to structure a controller
          */
-        console.log("Routes: ", _.flatten(_.map(controllers, (o)=>o)));
         server.route(_.flatten(_.map(controllers, (o)=>o)));
 
 
 
 });
-
 
 module.exports = server;
 

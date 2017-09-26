@@ -5,13 +5,13 @@ var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
 var schema = new Schema({
-    name: { type: String, required: true, unique: true, index: true},
+    name: { type: String, required: true, index: true, unique: true},
     inhabited: {type: Boolean, default: false},
-    stargateAddress: {type: String, unique: true},
+    stargateAddress: {type: String},
     discoveryDate: {type: Date, default: Date.now}
 });
 
-schema.static.findByName = function(name){
+schema.statics.findByName = function(name){
     return this.findOne({name}).exec();
 }
 

@@ -11,7 +11,7 @@ const config = require("../../config");
 const generateJWT = (user, secondsToExpire = 60, invalid = false) => {
 
     //Gets the secret automatically from the config.
-    let secret = config.jwt.secret;
+    let secret = config.auth.jwtSecret;
     if (invalid) secret = secret + "abc";
 
     //Actually just setting the id of the user as the issuer and the expire time.

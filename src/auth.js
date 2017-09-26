@@ -15,8 +15,6 @@
  * @param {function} callback function with the signature function(err, isValid, credentials)
  */
 const validateJWT = (decoded, request, callback) => {
-
-
     // You can do some additional proofs here.
     // For example if you have a blacklist to invalidate you JWTs you 
     callback(null, true);

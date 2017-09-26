@@ -4,12 +4,12 @@
  * First the database connection is established. After That the server will be started.
  */
 
- 'use strict';
+'use strict';
 
- const db = require('./db');
- const server = require('./server');
+const db = require('./db');
+const server = require('./server');
 
- db.connect()
-    .then(()=> server.start())
-    .then(() => console.log("Server running at: "+server.info.uri))
+db.connect()
+    .then(() => server.start())
+    .then(() => console.log("Server running at: " + server.info.uri))
     .catch((err) => console.log("Error while starting server!", err));

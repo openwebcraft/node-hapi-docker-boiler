@@ -77,12 +77,9 @@ This is a boilerplate for developing a small hapi server (or microservice) inspi
 * Explain installation and execution
 * List of changes to create a new MS
 * lint?
-* compose to run locally
+* compose to run locally with nodemon
 * compose to test locally with nodemon
-* implement example endpoint
-* example tests
-* example fixtures
-* jwt helper for testing
+* docker compose inheritance
 
 
 
