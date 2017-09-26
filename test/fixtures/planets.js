@@ -17,6 +17,5 @@ const planets = module.exports = {
         name: "Beta",
         stargateAddress: "123ABC456",
         discoveryDate: new Date()
-    }
-    
+    }  
 }

@@ -49,7 +49,7 @@ This is a boilerplate for developing a small hapi server (or microservice) inspi
 +-- _test
 |   +-- controllers
 |   +-- models
-|   +-- helper
+|   +-- helper          //For test helper scripts like JWT-generation
 +-- .dockerignore
 +-- config.js
 +-- docker-compose.yml
