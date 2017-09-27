@@ -1,6 +1,4 @@
-#File could be renamed to docker-compose-test.yml as it just runs the test
-
-#TODO: integrate nodemon
+#this is the compose file for testing
 
 version: '3'
 services:
