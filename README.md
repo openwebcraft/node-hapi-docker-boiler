@@ -2,15 +2,40 @@
 
 | Warning |
 | --- |
-|This repository is still work in progress.
+|This repository is still work in progress.|
+
 
 This is a boilerplate for developing a small hapi server (or microservice) inspired by [openwebcraft/node-js-starter](https://github.com/openwebcraft/nodejs-docker-starter)
 
-## Purpose of this Boilerplate
+
+## Setup
+
+### Prerequisites
+
+* Docker installed
+* docker-compose installed
+
+### Run locally
+
+To run locally simply use 
+>`docker-compose up --build`
+
+Server will be build, MongoDB Image will be downlaoded and both will start.
+The Server will be restarted as soon as you change something in the project.
+
+### Testing
+
+To start the tests simply use
+>`docker-compose -f docker-compose-test.yml up --build`
+
+Server will be build, MongoDB Image will be downlaoded. MongoDB and tests will be started. Tests will restart with each change in teh repo by nodemon.
 
 ## How to use
+You should use this boilerplate as a starting point or inspiration for your servers / microservices.
 
-### Setup
+The boilerplate is build in a way, that you can run and test your server locally in an easy way with docker.
+
+`docker-compose.yml` is used to run the project. `docker-compose-test.yml` is used to test it. Both integrate nodemon to automatically reload as soon as you change something.
 
 ## Deeper look inside
 
@@ -23,7 +48,6 @@ This is a boilerplate for developing a small hapi server (or microservice) inspi
 * hapi-auth-jwt2
 * joi
 * jsonwebtoken
-* moment
 * require-all
 
 ### devDependencies
@@ -39,6 +63,8 @@ This is a boilerplate for developing a small hapi server (or microservice) inspi
 
 ```
 .
++-- _config
+|   +-- config.js       
 +-- _src
 |   +-- controllers     //For all controllers
 |   +-- models          //For all mongoose Models
@@ -51,7 +77,6 @@ This is a boilerplate for developing a small hapi server (or microservice) inspi
 |   +-- models
 |   +-- helper          //For test helper scripts like JWT-generation
 +-- .dockerignore
-+-- config.js
 +-- docker-compose.yml
 +-- Dockerfile
 +-- LICENSE
@@ -71,15 +96,11 @@ This is a boilerplate for developing a small hapi server (or microservice) inspi
 >
 >THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
-
 ## TODO:
-* Explain installation and execution
+* Service to service communication example and testing example
 * List of changes to create a new MS
 * lint?
-* compose to run locally with nodemon
-* compose to test locally with nodemon
-* docker compose inheritance
+* docker compose inheritance with "extends" (not supported in compose v3)
 
 
 
