@@ -21,6 +21,7 @@
     "code": "^4.0.0",
     "lab": "^11.0.1",
     "nock": "^9.0.14",
+    "nodemon": "^1.12.1",
     "pow-mongodb-fixtures": "^0.14.0"
   },
   "bugs": {

@@ -4,7 +4,7 @@ services:
   micro:
     build: .
     image: micro
-    command: bash -c "sleep 5; pm2-docker src/index.js"
+    command: bash -c "sleep 5; ./node_modules/.bin/nodemon src/index.js"
     environment:
       HOSTNAME: "localhost"
       HOST: 0.0.0.0
@@ -13,6 +13,10 @@ services:
       MONGODB_URI: "mongodb://db:27017/local"
       ORIGIN: "*"
       JWTSECRET: "changethissecret"
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./test:/usr/src/app/test
+      - ./config:/usr/src/app/config
     expose:
       - 8080
     networks:

@@ -13,7 +13,7 @@ const filePath = require('path');
 const _ = require('lodash')
 
 const auth = require('./auth');
-const config = require('../config');
+const config = require('../config/config');
 const controllers = require('require-all')(__dirname + "/controllers");
 
 

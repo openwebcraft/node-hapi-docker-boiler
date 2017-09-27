@@ -1,6 +1,6 @@
 'use strict';
 const jwt = require('jsonwebtoken');
-const config = require("../../config");
+const config = require("../../config/config");
 
 /**
  * Generates a JWT from the users _id and isAdmin (can be loggedInAs) 

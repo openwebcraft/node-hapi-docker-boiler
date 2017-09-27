@@ -3,7 +3,7 @@ const lab = exports.lab = Lab.script();
 const expect = require('code').expect;
 
 
-const config = require('../../config');
+const config = require('../../config/config');
 const fixtures = require('pow-mongodb-fixtures').connect(config.mongo.uri);
 
 const server = require('../../src/server');
